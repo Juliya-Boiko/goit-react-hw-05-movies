@@ -3,7 +3,7 @@ import { customAxios } from './axios';
 // baseURL: `https://api.themoviedb.org/3/search/movie?api_key=<<api_key>>&language=en-US&page=1&include_adult=false`,
 
 export const searchParams = {
-  query: 'batman',
+  query: '',
   page: 1,
 };
 
