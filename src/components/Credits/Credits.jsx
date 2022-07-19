@@ -14,5 +14,4 @@ export const Credits = () => {
   }, [movieId]);
 
   return <div>{credits && <CreditsList credits={credits} />}</div>;
-  // console.log(movieId);
 };
