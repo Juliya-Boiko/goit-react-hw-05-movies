@@ -13,7 +13,6 @@ export const Movies = () => {
     } else {
       searchParams.query = query;
       getKeyWord().then(result => {
-        // console.log(result.data.results);
         setSearchResult(result.data.results);
       });
     }
