@@ -1,5 +1,6 @@
+import PropTypes from 'prop-types';
+
 export const CreditsList = ({ credits }) => {
-  console.log(credits);
   return (
     <div>
       <ul>
@@ -22,4 +23,8 @@ export const CreditsList = ({ credits }) => {
       </ul>
     </div>
   );
+};
+
+CreditsList.propTypes = {
+  credits: PropTypes.array.isRequired,
 };

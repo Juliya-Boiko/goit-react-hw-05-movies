@@ -1,6 +1,6 @@
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import { getCredits } from 'API/getCredits';
+import { getCredits } from 'api/getCredits';
 import { CreditsList } from './CreditsList';
 
 export const Credits = () => {

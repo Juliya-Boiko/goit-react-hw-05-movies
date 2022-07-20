@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Formik, Field, Form } from 'formik';
-import { searchParams, getKeyWord } from 'API/getKeyWord';
+import { searchParams, getKeyWord } from 'api/getKeyWord';
 import { MoviesList } from 'components/MoviesList';
 
 export const Movies = () => {

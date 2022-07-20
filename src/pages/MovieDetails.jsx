@@ -1,7 +1,7 @@
 import { useParams, Link, Outlet } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import { getFullInfo } from 'API/getFullInfo';
-import { MainContainer } from 'components/common/Container.styled';
+import { getFullInfo } from 'api/getFullInfo';
+import { MainContainer } from 'components/common/MainContainer.styled';
 import { releaseNormalize, ratingNormalize } from 'utils/utils';
 import { Genres } from 'components/Genres';
 

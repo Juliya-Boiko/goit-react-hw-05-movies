@@ -1,5 +1,6 @@
+import PropTypes from 'prop-types';
+
 export const Genres = ({ movieGenres }) => {
-  // console.log(movieGenres);
   return (
     <ul>
       {movieGenres.map(genre => {
@@ -7,4 +8,8 @@ export const Genres = ({ movieGenres }) => {
       })}
     </ul>
   );
+};
+
+Genres.propTypes = {
+  movieGenres: PropTypes.array.isRequired,
 };

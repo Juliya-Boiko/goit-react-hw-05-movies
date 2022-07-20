@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 export const ReviewsList = ({ reviews }) => {
   return (
     <ul>
@@ -11,4 +13,8 @@ export const ReviewsList = ({ reviews }) => {
       })}
     </ul>
   );
+};
+
+ReviewsList.propTypes = {
+  reviews: PropTypes.array.isRequired,
 };
