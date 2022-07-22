@@ -1,14 +1,14 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { useParams, Link, Outlet, useLocation } from 'react-router-dom';
 import { getFullInfo } from 'api/getFullInfo';
 import { releaseNormalize, ratingNormalize } from 'utils/utils';
 import { Genres } from 'components/Genres/Genres';
 
-export const MovieDetails = () => {
+const MovieDetails = () => {
   const { movieId } = useParams();
   const [movieInfo, setMovieInfo] = useState();
-  // const location = useLocation();
-  // const backRef = location.state.from;
+  // const location = useLocation().state.from;
+  // const backRef = location ? location.pathname + location.query : '';
   // console.log(backRef);
 
   useEffect(() => {
@@ -52,11 +52,13 @@ export const MovieDetails = () => {
               <Link to="reviews">Reviews</Link>
             </li>
           </ul>
-          <Outlet />
+          <Suspense>
+            <Outlet />
+          </Suspense>
         </div>
       )}
     </div>
   );
 };
 
-// export default MovieDetails;
+export default MovieDetails;

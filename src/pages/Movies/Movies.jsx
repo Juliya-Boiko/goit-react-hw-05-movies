@@ -4,7 +4,7 @@ import { Formik, Field, Form } from 'formik';
 import { getKeyWord } from 'api/getKeyWord';
 import { MoviesList } from 'components/MoviesList/MoviesList';
 
-export const Movies = () => {
+const Movies = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const [searchResult, setSearchResult] = useState([]);
 
@@ -45,4 +45,4 @@ export const Movies = () => {
   );
 };
 
-// export default Movies;
+export default Movies;

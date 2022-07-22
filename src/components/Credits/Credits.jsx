@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { getCredits } from 'api/getCredits';
 import { CreditsList } from './CreditsList';
 
-export const Credits = () => {
+const Credits = () => {
   const [credits, setCredits] = useState([]);
   const { movieId } = useParams();
 
@@ -16,4 +16,4 @@ export const Credits = () => {
   return <div>{credits && <CreditsList credits={credits} />}</div>;
 };
 
-// export default Credits;
+export default Credits;
