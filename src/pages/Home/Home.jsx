@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { getTrending } from 'api/getTrending';
+import { HomeTitle } from './Home.styled';
 import { MoviesList } from 'components/MoviesList/MoviesList';
 
 const Home = () => {
@@ -14,6 +15,7 @@ const Home = () => {
 
   return (
     <div>
+      <HomeTitle>today's trending movies</HomeTitle>
       <MoviesList movies={trendingMovies} />
     </div>
   );

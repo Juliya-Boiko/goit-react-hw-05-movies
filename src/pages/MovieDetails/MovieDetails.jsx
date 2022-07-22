@@ -9,7 +9,6 @@ const MovieDetails = () => {
   const [movieInfo, setMovieInfo] = useState();
   const location = useLocation().state.from;
   const backRef = location.state?.from ?? '/';
-  // console.log(backRef);
 
   useEffect(() => {
     getFullInfo(movieId).then(result => {

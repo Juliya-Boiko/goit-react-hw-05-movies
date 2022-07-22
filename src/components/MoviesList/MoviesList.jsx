@@ -1,21 +1,30 @@
 import { Link, useLocation } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import { MovList, MovListItem, MovListItemPoster } from './MoviesList.styled';
 
 export const MoviesList = ({ movies }) => {
   const location = useLocation();
-  // console.log(location.pathname, location.search);
+
   return (
-    <ul>
+    <MovList>
       {movies.map(movie => {
         return (
-          <li key={movie.id}>
+          <MovListItem key={movie.id}>
             <Link to={`/movies/${movie.id}`} state={{ from: location }}>
-              {movie.title}
+              <MovListItemPoster
+                src={
+                  movie.poster_path
+                    ? 'https://image.tmdb.org/t/p/w300' + movie.poster_path
+                    : 'https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg'
+                }
+                alt=""
+              />
+              {/* {movie.title} */}
             </Link>
-          </li>
+          </MovListItem>
         );
       })}
-    </ul>
+    </MovList>
   );
 };
 

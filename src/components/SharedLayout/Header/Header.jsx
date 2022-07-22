@@ -1,24 +1,31 @@
 import { HeaderContainer } from './Header.styled';
 import {
-  Navigation,
   NavigationList,
   NavigationListItem,
   NavigationLink,
+  NavigationLinkIconHome,
+  NavigationLinkIconMovie,
 } from './Navigation.styled';
 
 export const Header = () => {
   return (
     <HeaderContainer>
-      <Navigation>
+      <nav>
         <NavigationList>
           <NavigationListItem>
-            <NavigationLink to="/">Home</NavigationLink>
+            <NavigationLink to="/">
+              <NavigationLinkIconHome />
+              Home
+            </NavigationLink>
           </NavigationListItem>
           <NavigationListItem>
-            <NavigationLink to="/movies">Movies</NavigationLink>
+            <NavigationLink to="/movies">
+              <NavigationLinkIconMovie />
+              Movies
+            </NavigationLink>
           </NavigationListItem>
         </NavigationList>
-      </Navigation>
+      </nav>
     </HeaderContainer>
   );
 };
