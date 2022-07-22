@@ -7,8 +7,8 @@ import { Genres } from 'components/Genres/Genres';
 const MovieDetails = () => {
   const { movieId } = useParams();
   const [movieInfo, setMovieInfo] = useState();
-  // const location = useLocation().state.from;
-  // const backRef = location ? location.pathname + location.query : '';
+  const location = useLocation().state.from;
+  const backRef = location.state?.from ?? '/';
   // console.log(backRef);
 
   useEffect(() => {
@@ -19,7 +19,7 @@ const MovieDetails = () => {
 
   return (
     <div>
-      {/* <Link to={backRef}>Back to movies</Link> */}
+      <Link to={backRef}>Back to movies</Link>
       {movieInfo && (
         <div>
           <img
@@ -46,10 +46,14 @@ const MovieDetails = () => {
           <p>Addictional information:</p>
           <ul>
             <li>
-              <Link to="credits">Cast</Link>
+              <Link to="credits" state={{ from: location }}>
+                Cast
+              </Link>
             </li>
             <li>
-              <Link to="reviews">Reviews</Link>
+              <Link to="reviews" state={{ from: location }}>
+                Reviews
+              </Link>
             </li>
           </ul>
           <Suspense>
