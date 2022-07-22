@@ -9,10 +9,12 @@ export const Reviews = () => {
 
   useEffect(() => {
     getReviews(movieId).then(result => {
-      console.log(result.data.results);
+      // console.log(result.data.results);
       setReviews(result.data.results);
     });
   }, [movieId]);
 
   return <div>{reviews && <ReviewsList reviews={reviews} />}</div>;
 };
+
+// export default Reviews;

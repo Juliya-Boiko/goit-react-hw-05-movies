@@ -1,23 +1,25 @@
-import { useParams, Link, Outlet } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import { useParams, Link, Outlet, useLocation } from 'react-router-dom';
 import { getFullInfo } from 'api/getFullInfo';
-import { MainContainer } from 'components/common/MainContainer.styled';
 import { releaseNormalize, ratingNormalize } from 'utils/utils';
-import { Genres } from 'components/Genres';
+import { Genres } from 'components/Genres/Genres';
 
 export const MovieDetails = () => {
   const { movieId } = useParams();
   const [movieInfo, setMovieInfo] = useState();
+  // const location = useLocation();
+  // const backRef = location.state.from;
+  // console.log(backRef);
 
   useEffect(() => {
     getFullInfo(movieId).then(result => {
-      // console.log(result.data);
       setMovieInfo(result.data);
     });
   }, [movieId]);
 
   return (
-    <MainContainer>
+    <div>
+      {/* <Link to={backRef}>Back to movies</Link> */}
       {movieInfo && (
         <div>
           <img
@@ -53,6 +55,8 @@ export const MovieDetails = () => {
           <Outlet />
         </div>
       )}
-    </MainContainer>
+    </div>
   );
 };
+
+// export default MovieDetails;

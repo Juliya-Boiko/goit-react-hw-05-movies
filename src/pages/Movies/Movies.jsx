@@ -1,25 +1,30 @@
 import { useState, useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { Formik, Field, Form } from 'formik';
-import { searchParams, getKeyWord } from 'api/getKeyWord';
-import { MoviesList } from 'components/MoviesList';
+import { getKeyWord } from 'api/getKeyWord';
+import { MoviesList } from 'components/MoviesList/MoviesList';
 
 export const Movies = () => {
-  const [query, setQuery] = useState('');
+  const [searchParams, setSearchParams] = useSearchParams();
   const [searchResult, setSearchResult] = useState([]);
 
   useEffect(() => {
-    if (query === '') {
+    let filmName = searchParams.get('name') ?? '';
+    if (filmName === '') {
       return;
     } else {
-      searchParams.query = query;
-      getKeyWord().then(result => {
+      getKeyWord({
+        query: filmName,
+        page: 1,
+      }).then(result => {
         setSearchResult(result.data.results);
       });
     }
-  }, [query]);
+  }, [searchParams]);
 
   const handlerSubmit = value => {
-    setQuery(value.query);
+    const nextParams = value.query !== '' ? { name: value.query } : {};
+    setSearchParams(nextParams);
   };
 
   return (
@@ -39,3 +44,5 @@ export const Movies = () => {
     </div>
   );
 };
+
+// export default Movies;

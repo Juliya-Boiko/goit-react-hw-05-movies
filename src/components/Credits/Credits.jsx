@@ -15,3 +15,5 @@ export const Credits = () => {
 
   return <div>{credits && <CreditsList credits={credits} />}</div>;
 };
+
+// export default Credits;

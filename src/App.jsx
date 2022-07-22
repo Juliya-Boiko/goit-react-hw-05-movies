@@ -1,8 +1,8 @@
 import { Routes, Route } from 'react-router-dom';
 import { Home } from 'pages/Home/Home';
 import { Header } from 'components/Header/Header';
-import { Movies } from 'pages/Movies';
-import { MovieDetails } from 'pages/MovieDetails';
+import { Movies } from 'pages/Movies/Movies';
+import { MovieDetails } from 'pages/MovieDetails/MovieDetails';
 import { Credits } from 'components/Credits/Credits';
 import { Reviews } from 'components/Reviews/Reviews';
 

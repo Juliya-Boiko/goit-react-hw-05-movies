@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { getTrending } from 'api/getTrending';
-import { MoviesList } from 'components/MoviesList';
-import { MainContainer } from 'components/common/MainContainer.styled';
+import { MoviesList } from 'components/MoviesList/MoviesList';
 
 export const Home = () => {
   const [trendingMovies, setTrendingMovies] = useState([]);
@@ -14,8 +13,10 @@ export const Home = () => {
   }, []);
 
   return (
-    <MainContainer>
+    <div>
       <MoviesList movies={trendingMovies} />
-    </MainContainer>
+    </div>
   );
 };
+
+// export default Home;
