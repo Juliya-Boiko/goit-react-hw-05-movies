@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { getTrending } from 'api/getTrending';
-import { HomeTitle } from './Home.styled';
+import { MainTitle } from 'components/common/MainTitle.styled';
 import { MoviesList } from 'components/MoviesList/MoviesList';
 
 const Home = () => {
@@ -15,7 +15,7 @@ const Home = () => {
 
   return (
     <div>
-      <HomeTitle>today's trending movies</HomeTitle>
+      <MainTitle>today's trending movies</MainTitle>
       <MoviesList movies={trendingMovies} />
     </div>
   );

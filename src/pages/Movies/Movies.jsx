@@ -1,8 +1,16 @@
 import { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import { Formik, Field, Form } from 'formik';
+import { Formik } from 'formik';
 import { getKeyWord } from 'api/getKeyWord';
 import { MoviesList } from 'components/MoviesList/MoviesList';
+import { MainTitle } from 'components/common/MainTitle.styled';
+import {
+  MoviesContainer,
+  SearchForm,
+  SearchFormInput,
+  SearchFormBtn,
+  SearchFormBtnIcon,
+} from './Movies.styled';
 
 const Movies = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -28,20 +36,27 @@ const Movies = () => {
   };
 
   return (
-    <div>
+    <MoviesContainer>
+      <MainTitle>search movie by keyword</MainTitle>
       <Formik
         initialValues={{ query: '' }}
         onSubmit={values => {
           handlerSubmit(values);
         }}
       >
-        <Form>
-          <Field type="text" name="query" placeholder="Enter a keyword" />
-          <button type="submit">Search</button>
-        </Form>
+        <SearchForm>
+          <SearchFormInput
+            type="text"
+            name="query"
+            placeholder="Enter a keyword"
+          />
+          <SearchFormBtn type="submit">
+            <SearchFormBtnIcon />
+          </SearchFormBtn>
+        </SearchForm>
       </Formik>
       <MoviesList movies={searchResult} />
-    </div>
+    </MoviesContainer>
   );
 };
 
