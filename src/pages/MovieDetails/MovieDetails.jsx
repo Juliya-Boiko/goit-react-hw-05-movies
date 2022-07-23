@@ -1,8 +1,8 @@
 import { useState, useEffect, Suspense } from 'react';
 import { useParams, Link, Outlet, useLocation } from 'react-router-dom';
 import { getFullInfo } from 'api/getFullInfo';
-import { releaseNormalize, ratingNormalize } from 'utils/utils';
-import { Genres } from 'components/Genres/Genres';
+import { MovieInfo } from 'components/MovieInfo/MovieInfo';
+import { BackLink, BackLinkIcon } from 'components/common/BackLink.styled';
 
 const MovieDetails = () => {
   const { movieId } = useParams();
@@ -18,30 +18,13 @@ const MovieDetails = () => {
 
   return (
     <div>
-      <Link to={backRef}>Back to movies</Link>
+      <BackLink to={backRef}>
+        <BackLinkIcon />
+        Back to movies
+      </BackLink>
       {movieInfo && (
         <div>
-          <img
-            src={
-              movieInfo.poster_path
-                ? 'https://image.tmdb.org/t/p/w500' + movieInfo.poster_path
-                : 'https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg'
-            }
-            alt=""
-            width="100px"
-          />
-          <p>
-            {movieInfo.title}
-            {'  '}
-            <span>{releaseNormalize(movieInfo.release_date)}</span>
-          </p>
-          <p>
-            Rating: <span>{ratingNormalize(movieInfo.vote_average)}</span>
-          </p>
-          <p>Overview:</p>
-          <p>{movieInfo.overview}</p>
-          <p>Genres</p>
-          {<Genres movieGenres={movieInfo.genres} />}
+          <MovieInfo movie={movieInfo} />
           <p>Addictional information:</p>
           <ul>
             <li>

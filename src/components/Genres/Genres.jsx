@@ -1,12 +1,13 @@
 import PropTypes from 'prop-types';
+import { GenresList, GenresListItem } from './Genres.styled';
 
 export const Genres = ({ movieGenres }) => {
   return (
-    <ul>
+    <GenresList>
       {movieGenres.map(genre => {
-        return <li key={genre.id}>{genre.name}</li>;
+        return <GenresListItem key={genre.id}>{genre.name}</GenresListItem>;
       })}
-    </ul>
+    </GenresList>
   );
 };
 
