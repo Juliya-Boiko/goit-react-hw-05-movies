@@ -11,6 +11,7 @@ import {
   SearchFormBtn,
   SearchFormBtnIcon,
 } from './Movies.styled';
+import { toast } from 'react-toastify';
 
 const Movies = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -31,8 +32,13 @@ const Movies = () => {
   }, [searchParams]);
 
   const handlerSubmit = value => {
-    const nextParams = value.query !== '' ? { name: value.query } : {};
-    setSearchParams(nextParams);
+    if (value.query.trim() === '') {
+      toast('Please, enter a word', {});
+      return;
+    } else {
+      const nextParams = value.query !== '' ? { name: value.query } : {};
+      setSearchParams(nextParams);
+    }
   };
 
   return (

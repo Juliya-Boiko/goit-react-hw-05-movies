@@ -5,6 +5,7 @@ import { MovieData, AddListItem } from './MovieDetails.styled';
 import { MovieInfoBlock } from './MovieInfo/MovieInfo.styled';
 import { MovieInfo } from 'pages/MovieDetails/MovieInfo/MovieInfo';
 import { BackLink, BackLinkIcon } from 'components/common/BackLink.styled';
+import { LoaderSpinner } from 'components/Loader/Loader';
 
 const MovieDetails = () => {
   const { movieId } = useParams();
@@ -39,7 +40,7 @@ const MovieDetails = () => {
               </Link>
             </AddListItem>
           </ul>
-          <Suspense>
+          <Suspense fallback={<LoaderSpinner />}>
             <Outlet />
           </Suspense>
         </div>
