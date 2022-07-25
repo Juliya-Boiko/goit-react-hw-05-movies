@@ -16,10 +16,10 @@ const Reviews = () => {
 
   return (
     <div>
+      {reviews.length > 0 && <ReviewsList reviews={reviews} />}
       {reviews.length === 0 && (
         <EmptyReviews>Sorry, we dont have reviews</EmptyReviews>
       )}
-      {reviews.length > 0 && <ReviewsList reviews={reviews} />}
     </div>
   );
 };
