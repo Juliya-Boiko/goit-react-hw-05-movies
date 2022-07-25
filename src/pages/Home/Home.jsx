@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { getTrending } from 'api/getTrending';
+import { getTrending } from 'axios/getTrending';
 import { MainTitle } from 'components/common/MainTitle.styled';
 import { MoviesList } from 'components/MoviesList/MoviesList';
 

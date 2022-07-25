@@ -1,6 +1,6 @@
 import { useState, useEffect, Suspense } from 'react';
 import { useParams, Link, Outlet, useLocation } from 'react-router-dom';
-import { getFullInfo } from 'api/getFullInfo';
+import { getFullInfo } from 'axios/getFullInfo';
 import { MovieInfo } from 'components/MovieInfo/MovieInfo';
 import { BackLink, BackLinkIcon } from 'components/common/BackLink.styled';
 

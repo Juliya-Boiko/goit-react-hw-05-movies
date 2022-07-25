@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { Formik } from 'formik';
-import { getKeyWord } from 'api/getKeyWord';
+import { getKeyWord } from 'axios/getKeyWord';
 import { MoviesList } from 'components/MoviesList/MoviesList';
 import { MainTitle } from 'components/common/MainTitle.styled';
 import {
