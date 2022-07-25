@@ -1,4 +1,5 @@
 import { customAxios } from './axios';
+import { toast } from 'react-toastify';
 
 export const getTrending = async () => {
   try {
@@ -6,6 +7,6 @@ export const getTrending = async () => {
     const { data } = response;
     return data;
   } catch (error) {
-    console.log(error);
+    toast('Sorry, backend error', {});
   }
 };

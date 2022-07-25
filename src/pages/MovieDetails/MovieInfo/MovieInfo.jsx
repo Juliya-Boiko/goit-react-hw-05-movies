@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { releaseNormalize, ratingNormalize } from 'utils/utils';
+import { releaseNormalize, ratingNormalize } from 'utils/normalizers';
 import { Genres } from 'pages/MovieDetails/MovieInfo/Genres/Genres';
 import {
   MovieInfoCard,

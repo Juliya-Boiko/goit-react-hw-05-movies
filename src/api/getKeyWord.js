@@ -1,4 +1,5 @@
 import { customAxios } from './axios';
+import { toast } from 'react-toastify';
 
 export const getKeyWord = async query => {
   try {
@@ -7,6 +8,6 @@ export const getKeyWord = async query => {
     });
     return response;
   } catch (error) {
-    console.log(error);
+    toast('Sorry, backend error', {});
   }
 };
