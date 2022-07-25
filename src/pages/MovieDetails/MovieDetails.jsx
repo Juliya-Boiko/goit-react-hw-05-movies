@@ -1,14 +1,13 @@
 import { useState, useEffect, Suspense } from 'react';
 import { useParams, Link, Outlet, useLocation } from 'react-router-dom';
-import { getFullInfo } from 'axios/getFullInfo';
+import { getFullInfo } from 'api/getFullInfo';
 import { MovieInfo } from 'components/MovieInfo/MovieInfo';
 import { BackLink, BackLinkIcon } from 'components/common/BackLink.styled';
 
 const MovieDetails = () => {
   const { movieId } = useParams();
   const [movieInfo, setMovieInfo] = useState();
-  const location = useLocation().state.from;
-  const backRef = location.state?.from ?? '/';
+  const location = useLocation().state?.from ?? '/';
 
   useEffect(() => {
     getFullInfo(movieId).then(result => {
@@ -18,7 +17,7 @@ const MovieDetails = () => {
 
   return (
     <div>
-      <BackLink to={backRef}>
+      <BackLink to={location}>
         <BackLinkIcon />
         Back to movies
       </BackLink>

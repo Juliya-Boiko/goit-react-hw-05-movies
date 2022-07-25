@@ -1,5 +1,5 @@
 import { useParams } from 'react-router-dom';
-import { getReviews } from 'axios/getReviews';
+import { getReviews } from 'api/getReviews';
 import { useState, useEffect } from 'react';
 import { ReviewsList } from './ReviewsList';
 
