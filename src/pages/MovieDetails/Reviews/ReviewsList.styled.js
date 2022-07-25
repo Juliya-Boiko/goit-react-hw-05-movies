@@ -11,9 +11,3 @@ export const ReviewsListItem = styled.li`
 export const ReviewerName = styled.p`
   color: ${p => p.theme.colors.accent};
 `;
-
-export const EmptyReviews = styled.p`
-  text-align: center;
-  font-size: 20px;
-  color: ${p => p.theme.colors.accent};
-`;
