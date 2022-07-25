@@ -3,7 +3,6 @@ import { Routes, Route } from 'react-router-dom';
 import { SharedLayout } from 'layouts/SharedLayout/SharedLayout';
 import { LoaderSpinner } from 'components/Loader/Loader';
 
-// const SharedLayout = lazy(() => import('layouts/SharedLayout/SharedLayout'));
 const Home = lazy(() => import('pages/Home/Home'));
 const Movies = lazy(() => import('pages/Movies/Movies'));
 const MovieDetails = lazy(() => import('pages/MovieDetails/MovieDetails'));
