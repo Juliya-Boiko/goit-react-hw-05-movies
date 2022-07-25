@@ -21,4 +21,5 @@ export const MovieInfoTitle = styled.h3`
 
 export const MovieInfoBlock = styled.div`
   margin-bottom: 10px;
+  color: ${p => p.theme.colors.text};
 `;

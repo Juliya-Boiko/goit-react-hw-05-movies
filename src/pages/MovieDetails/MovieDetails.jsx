@@ -1,7 +1,9 @@
 import { useState, useEffect, Suspense } from 'react';
 import { useParams, Link, Outlet, useLocation } from 'react-router-dom';
 import { getFullInfo } from 'api/getFullInfo';
-import { MovieInfo } from 'components/MovieInfo/MovieInfo';
+import { MovieData, AddListItem } from './MovieDetails.styled';
+import { MovieInfoBlock } from './MovieInfo/MovieInfo.styled';
+import { MovieInfo } from 'pages/MovieDetails/MovieInfo/MovieInfo';
 import { BackLink, BackLinkIcon } from 'components/common/BackLink.styled';
 
 const MovieDetails = () => {
@@ -16,7 +18,7 @@ const MovieDetails = () => {
   }, [movieId]);
 
   return (
-    <div>
+    <MovieData>
       <BackLink to={location}>
         <BackLinkIcon />
         Back to movies
@@ -24,25 +26,25 @@ const MovieDetails = () => {
       {movieInfo && (
         <div>
           <MovieInfo movie={movieInfo} />
-          <p>Addictional information:</p>
+          <MovieInfoBlock>Addictional information:</MovieInfoBlock>
           <ul>
-            <li>
+            <AddListItem>
               <Link to="credits" state={{ from: location }}>
                 Cast
               </Link>
-            </li>
-            <li>
+            </AddListItem>
+            <AddListItem>
               <Link to="reviews" state={{ from: location }}>
                 Reviews
               </Link>
-            </li>
+            </AddListItem>
           </ul>
           <Suspense>
             <Outlet />
           </Suspense>
         </div>
       )}
-    </div>
+    </MovieData>
   );
 };
 

@@ -1,9 +1,9 @@
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { getCredits } from 'api/getCredits';
-import { CreditsList } from './CreditsList';
+import { CastList } from './CastList';
 
-const Credits = () => {
+const Cast = () => {
   const [credits, setCredits] = useState([]);
   const { movieId } = useParams();
 
@@ -13,7 +13,7 @@ const Credits = () => {
     });
   }, [movieId]);
 
-  return <div>{credits && <CreditsList credits={credits} />}</div>;
+  return <div>{credits && <CastList credits={credits} />}</div>;
 };
 
-export default Credits;
+export default Cast;

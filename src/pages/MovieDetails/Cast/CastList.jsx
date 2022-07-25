@@ -1,30 +1,34 @@
 import PropTypes from 'prop-types';
-
-export const CreditsList = ({ credits }) => {
+import {
+  CastListStyled,
+  CastListItem,
+  CastListPoster,
+  CastListName,
+} from './CastList.styled';
+export const CastList = ({ credits }) => {
   return (
     <div>
-      <ul>
+      <CastListStyled>
         {credits.map(credit => {
           return (
-            <li key={credit.credit_id}>
-              <img
+            <CastListItem key={credit.credit_id}>
+              <CastListPoster
                 src={
                   credit.profile_path
                     ? 'https://image.tmdb.org/t/p/w500' + credit.profile_path
                     : 'https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg'
                 }
                 alt=""
-                width="100px"
               />
-              <p>{credit.name}</p>
-            </li>
+              <CastListName>{credit.name}</CastListName>
+            </CastListItem>
           );
         })}
-      </ul>
+      </CastListStyled>
     </div>
   );
 };
 
-CreditsList.propTypes = {
+CastList.propTypes = {
   credits: PropTypes.array.isRequired,
 };

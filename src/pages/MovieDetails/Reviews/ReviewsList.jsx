@@ -1,14 +1,14 @@
 import PropTypes from 'prop-types';
-
+import { ReviewsListItem, ReviewerName } from './ReviewsList.styled';
 export const ReviewsList = ({ reviews }) => {
   return (
     <ul>
       {reviews.map(review => {
         return (
-          <li key={review.id}>
-            <p>{review.author}</p>
+          <ReviewsListItem key={review.id}>
+            <ReviewerName>{review.author}</ReviewerName>
             <p>{review.content}</p>
-          </li>
+          </ReviewsListItem>
         );
       })}
     </ul>
