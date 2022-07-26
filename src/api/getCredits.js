@@ -6,6 +6,6 @@ export const getCredits = async id => {
     const response = await customAxios.get(`/movie/${id}/credits`);
     return response;
   } catch (error) {
-    toast('Sorry, backend error', {});
+    toast.error('Sorry, backend error', {});
   }
 };

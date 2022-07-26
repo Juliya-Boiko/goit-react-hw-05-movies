@@ -8,6 +8,6 @@ export const getKeyWord = async query => {
     });
     return response;
   } catch (error) {
-    toast('Sorry, backend error', {});
+    toast.error('Sorry, backend error', {});
   }
 };

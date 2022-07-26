@@ -6,6 +6,6 @@ export const getFullInfo = async id => {
     const response = await customAxios.get(`/movie/${id}`);
     return response;
   } catch (error) {
-    toast('Sorry, backend error', {});
+    toast.error('Sorry, backend error', {});
   }
 };

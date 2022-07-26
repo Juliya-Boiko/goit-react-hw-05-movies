@@ -7,6 +7,6 @@ export const getTrending = async () => {
     const { data } = response;
     return data;
   } catch (error) {
-    toast('Sorry, backend error', {});
+    toast.error('Sorry, backend error', {});
   }
 };
