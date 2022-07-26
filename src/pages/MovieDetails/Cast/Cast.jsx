@@ -1,7 +1,7 @@
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { getCredits } from 'api/getCredits';
-import { CastList } from './CastList';
+import { CastList } from '../../../components/CastList/CastList';
 
 const Cast = () => {
   const [credits, setCredits] = useState([]);
@@ -13,7 +13,7 @@ const Cast = () => {
     });
   }, [movieId]);
 
-  return <div>{credits && <CastList credits={credits} />}</div>;
+  return <>{credits && <CastList credits={credits} />}</>;
 };
 
 export default Cast;

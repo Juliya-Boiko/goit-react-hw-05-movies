@@ -2,10 +2,10 @@ import { Formik } from 'formik';
 import { SearchingForm, SearchFormInput } from './SearchForm.styled';
 import { SearchButton } from 'components/SearchButton/SearchButton';
 
-export const SearchForm = ({ onSubmit }) => {
+export const SearchForm = ({ onSubmit, value }) => {
   return (
     <Formik
-      initialValues={{ query: '' }}
+      initialValues={{ query: value ?? '' }}
       onSubmit={values => {
         onSubmit(values);
       }}

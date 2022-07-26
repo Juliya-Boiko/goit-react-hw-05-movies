@@ -2,8 +2,8 @@ import { useState, useEffect, Suspense } from 'react';
 import { useParams, Link, Outlet, useLocation } from 'react-router-dom';
 import { getFullInfo } from 'api/getFullInfo';
 import { MovieData, AddListItem } from './MovieDetails.styled';
-import { MovieInfoBlock } from './MovieInfo/MovieInfo.styled';
-import { MovieInfo } from 'pages/MovieDetails/MovieInfo/MovieInfo';
+import { MovieInfoBlock } from '../../components/MovieInfo/MovieInfo.styled';
+import { MovieInfo } from 'components/MovieInfo/MovieInfo';
 import { BackLink, BackLinkIcon } from 'components/common/BackLink.styled';
 import { LoaderSpinner } from 'components/Loader/Loader';
 

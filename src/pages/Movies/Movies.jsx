@@ -38,7 +38,7 @@ const Movies = () => {
   return (
     <MoviesContainer>
       <MainTitle>search movie by keyword</MainTitle>
-      <SearchForm onSubmit={handlerSubmit} />
+      <SearchForm onSubmit={handlerSubmit} value={searchParams.get('name')} />
       <MoviesList movies={searchResult} />
     </MoviesContainer>
   );
