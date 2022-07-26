@@ -1,6 +1,6 @@
 import { Outlet } from 'react-router-dom';
-import { Header } from 'layouts/SharedLayout/Header/Header';
-import { MainContainer } from 'layouts/SharedLayout/SharedLayout.styled';
+import { Header } from 'layout/common/Header/Header';
+import { MainContainer } from 'layout/SharedLayout.styled';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
